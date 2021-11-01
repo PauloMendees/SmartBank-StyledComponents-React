@@ -4,15 +4,15 @@ import saude from "../assets/images/saude.svg";
 import transporte from "../assets/images/transporte.svg";
 import utilidades from "../assets/images/utilidades.svg";
 import outros from "../assets/images/outros.svg";
-import { Icone } from "./UI";
+import { Icone, IconeTema } from "./UI";
 
 export const Filter = (type) => {
   const Icones = {
-    Restaurante: <Icone src={alimentacao} alt="Alimentação" />,
-    Saude: <Icone src={saude} alt="Saúde" />,
-    Transporte: <Icone src={transporte} alt="Transporte" />,
-    Utilidades: <Icone src={utilidades} alt="Utilidades" />,
-    default: <Icone src={outros} alt="Outros" />,
+    Restaurante: <IconeTema src={alimentacao} alt="Alimentação" />,
+    Saude: <IconeTema src={saude} alt="Saúde" />,
+    Transporte: <IconeTema src={transporte} alt="Transporte" />,
+    Utilidades: <IconeTema src={utilidades} alt="Utilidades" />,
+    default: <IconeTema src={outros} alt="Outros" />,
   };
 
   return Icones[type] || Icones.default;

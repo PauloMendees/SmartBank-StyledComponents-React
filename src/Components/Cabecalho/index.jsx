@@ -1,24 +1,34 @@
 import React from "react";
 import styled from "styled-components";
 import bank_logo from "../../assets/images/bank_logo.svg";
-import { corPrimaria } from "../UI/variables";
+import { corPrimariaClara } from "../UI/variables";
 
 //Criando os links estilizados com StyledComponents
-const BtnCabecalho = styled.a`
+const BtnContent = styled.a`
   text-align: center;
   border-radius: 3px;
   padding: 5px 20px;
   margin: 0 10px;
   font-weight: 600;
   border: 2px solid white;
+  background: ${({ theme }) => theme.boxContent};
+  color: ${({ theme }) => theme.primary};
+`;
 
-  background: ${(props) => (props.primary ? "white" : corPrimaria)};
-  color: ${(props) => (props.primary ? corPrimaria : "white")};
+const BtnLined = styled.a`
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px 20px;
+  margin: 0 10px;
+  font-weight: 600;
+  border: 2px solid white;
+  background: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.boxContent};
 `;
 
 //Criando um nav estilizado com o StyledComponents
 const StyledHeader = styled.nav`
-  background-color: ${corPrimaria};
+  background-color: ${({ theme }) => theme.primary};
   display: flex;
   justify-content: space-between;
   padding: 0 15vw;
@@ -37,10 +47,8 @@ const Cabecalho = () => {
     <StyledHeader>
       <ImagemLogo src={bank_logo} alt="Logo Smart Bank" />
       <div>
-        <BtnCabecalho href="https://google.com">Ajuda</BtnCabecalho>
-        <BtnCabecalho primary href="https://google.com">
-          Sair
-        </BtnCabecalho>
+        <BtnLined href="https://google.com">Ajuda</BtnLined>
+        <BtnContent href="https://google.com">Sair</BtnContent>
       </div>
     </StyledHeader>
   );

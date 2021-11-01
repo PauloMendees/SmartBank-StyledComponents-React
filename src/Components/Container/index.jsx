@@ -6,7 +6,9 @@ import { extratoLista } from "../../info";
 import { Extrato } from "../Extrato";
 
 const ContainerDiv = styled.div`
-  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  background-color: ${({ theme }) => theme.body};
   min-height: 90vh;
   padding: 0px 15vw;
 `;
